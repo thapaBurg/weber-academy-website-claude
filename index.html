@@ -1012,18 +1012,6 @@ function submitForm() {
     body: JSON.stringify({ fname:fname, lname:lname, email:email, phone:phone, service:service, status:status, message:message })
   }).catch(function(e){ console.warn('Sheet log failed:', e); });
 
-  var admEmail = 'Admissions' + '@' + 'weberacademy.org';
-  var body = 'Name: ' + fname + ' ' + lname
-    + '%0AEmail: ' + email
-    + '%0APhone: ' + phone
-    + '%0AService: ' + service
-    + '%0AStatus: ' + status
-    + '%0A%0AMessage:%0A' + encodeURIComponent(message);
-  window.open(
-    'mailto:' + admEmail + '?subject=Weber Academy Enquiry from '
-    + encodeURIComponent(fname + ' ' + lname) + '&body=' + body,
-    '_blank'
-  );
 
   document.getElementById('formWrap').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
